@@ -1,3 +1,4 @@
+/*
 var app = angular.module('MyApp', []);
 app.controller('questionController', function($scope) {
   //objeto pregunta
@@ -48,3 +49,300 @@ app.controller('questionController', function($scope) {
   }
   $scope.range = range;
 });
+
+
+*/
+
+function startClock()
+{
+	//Cookies.remove('outtatime');
+	if (!Cookies.get('outtatime'))
+	{
+		if ( !Cookies.get('stopclock') )
+			{
+				Cookies.set("stopclock",moment().add(1, 'm').add(1,'s'));
+				$('#timerSpace').text(moment( moment(Cookies.get('stopclock')) - moment() ).format('m:ss') );
+			}
+
+		if ( Cookies.get('stopclock') )
+			setInterval(function(){
+				if (moment() > moment(Cookies.get('stopclock')))
+					{
+						$('#timerSpace').text('TIME IS OUT'); 
+						Cookies.remove('stopclock'); Cookies.set('outtatime',1);
+					}
+				else
+					$('#timerSpace').text(moment( moment(Cookies.get('stopclock')) - moment() ).format('m:ss') );
+			}, 1000);
+	}
+}
+
+function doSetQuestion(number)
+{
+	$('.questionNumber').html(number+1);
+	$('.question').html(myQuestions[number].questionText);
+	$('.firstAnswer').html(myQuestions[number].firstAnswer);
+	$('.secondAnswer').html(myQuestions[number].secondAnswer);
+	$('.thirdAnswer').html(myQuestions[number].thirdAnswer);
+}
+
+var myQuestions = [
+    {
+    "questionText": "Question 1",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 2",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 3",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 4",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 5",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 6",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 7",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 8",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 9",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 10",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 11",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 12",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 13",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 14",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 15",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 16",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 17",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 18",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 19",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 20",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 21",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 22",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 23",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 24",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 25",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 26",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 27",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 28",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 29",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 30",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+	"questionText": "Question 31",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 32",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 33",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 34",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 35",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	},
+	{
+    "questionText": "Question 36",
+    "firstAnswer": 	"A",
+    "secondAnswer": "B",
+	"thirdAnswer":	"C",
+	"correctAnswer":"A"
+	}];
+	
+function doButtons()
+{
+	$('.questionsPool').html('');
+	for (x=0;x<=35;x++)
+		$('.questionsPool').append('<button class="questionButton" onclick="doSetQuestion('+x+')">'+(x+1)+'</button>');
+}
