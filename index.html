@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+<head>
+  <script data-require="angular.js@1.4.6" data-semver="1.4.6" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body ng-controller="questionController">
+  <div class="questionsPool">
+     <button ng-repeat="i in range" class="questionButton">
+        {{i}}
+     </button>
+
+  </div>
+  <div class="timer">
+    <h4>10:00 minutes </h4>
+  </div>
+  <div >
+    <div class="questionNumber">
+      <h5>Question {{question.id}}</h5>
+    </div>
+    <div class="question">
+      <p>{{question.sentence}}</p>
+    </div>
+    <div class="answersTitle">
+      <h5>Answers</h5>
+    </div>
+    <div class="answers">
+      <label ng-repeat="answer in question.answers">
+        <br />
+        <input type="radio" ng-model="answer.active" ng-click="check()"> {{answer.text}}
+      </label>
+    </div>
+    <!-- <button ng-click="respond()">Answer</button> -->
+  </div>
+</body>
+
+</html>
