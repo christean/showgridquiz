@@ -1,0 +1,46 @@
+/* Styles go here */
+
+body{
+  font-family: Verdana;
+}
+
+.questionNumber, .answersTitle{
+  background-color:#ccc;
+  width: 500px;
+}
+
+.question{
+  border-width:1px;
+  border-color:#000;
+  border-style: solid;
+  width:500px;
+  height: 250px;
+  margin-bottom: 5px;
+}
+
+.answers{
+  border-width:1px;
+  border-color:#000;
+  border-style: solid;
+  width:500px;
+  height: 110px;
+}
+
+.timer{
+  position:absolute;
+  left:700px;
+  top:0px;
+  width: 150px;
+}
+
+.questionsPool{
+  position:absolute;
+  left:540px;
+  top:60px;
+  width: 300px;
+}
+
+.questionButton{
+width:50px;
+height:40px;
+}
