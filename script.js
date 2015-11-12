@@ -53,21 +53,17 @@ app.controller('questionController', function($scope) {
 
 */
 
-function startClock()
-{
-	//Cookies.remove('outtatime');
-	if (!Cookies.get('outtatime'))
-	{
-		if ( !Cookies.get('stopclock') )
-			{
+function startClock(){
+	Cookies.remove('outtatime'); // for timer to start again this line has to be commented
+	if (!Cookies.get('outtatime')){
+		if ( !Cookies.get('stopclock') ){
 				Cookies.set("stopclock",moment().add(1, 'm').add(1,'s'));
 				$('#timerSpace').text(moment( moment(Cookies.get('stopclock')) - moment() ).format('m:ss') );
 			}
 
 		if ( Cookies.get('stopclock') )
 			setInterval(function(){
-				if (moment() > moment(Cookies.get('stopclock')))
-					{
+				if (moment() > moment(Cookies.get('stopclock'))){
 						$('#timerSpace').text('TIME IS OUT'); 
 						Cookies.remove('stopclock'); Cookies.set('outtatime',1);
 					}
@@ -77,21 +73,21 @@ function startClock()
 	}
 }
 
-function doSetQuestion(number)
-{
+function doSetQuestion(number){
 	$('.questionNumber').html(number+1);
 	$('.question').html(myQuestions[number].questionText);
 	$('.firstAnswer').html(myQuestions[number].firstAnswer);
 	$('.secondAnswer').html(myQuestions[number].secondAnswer);
 	$('.thirdAnswer').html(myQuestions[number].thirdAnswer);
+	$('.fourthAnswer').html(myQuestions[number].fourthAnswer);
 }
 
-var myQuestions = [
-    {
+var myQuestions = [{
     "questionText": "Question 1",
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -99,6 +95,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -106,6 +103,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -113,6 +111,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -120,6 +119,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -127,6 +127,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -134,6 +135,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -141,6 +143,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -148,6 +151,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -155,6 +159,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -162,6 +167,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -169,6 +175,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -176,6 +183,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -183,6 +191,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -190,6 +199,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -197,6 +207,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -204,6 +215,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -211,6 +223,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -218,6 +231,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -225,6 +239,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -232,6 +247,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -239,6 +255,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -246,6 +263,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -253,6 +271,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -260,6 +279,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -267,6 +287,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -274,6 +295,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -281,6 +303,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -288,6 +311,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -295,6 +319,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -302,6 +327,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -309,6 +335,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -316,6 +343,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -323,6 +351,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -330,6 +359,7 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	},
 	{
@@ -337,11 +367,11 @@ var myQuestions = [
     "firstAnswer": 	"A",
     "secondAnswer": "B",
 	"thirdAnswer":	"C",
+	"fourthAnswer":	"D",
 	"correctAnswer":"A"
 	}];
 	
-function doButtons()
-{
+function doButtons(){
 	$('.questionsPool').html('');
 	for (x=0;x<=35;x++)
 		$('.questionsPool').append('<button class="questionButton" onclick="doSetQuestion('+x+')">'+(x+1)+'</button>');

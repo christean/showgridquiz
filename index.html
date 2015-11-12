@@ -7,8 +7,8 @@
   -->
   <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="http://momentjs.com/downloads/moment.js"></script>
   <script src="cookie.js"></script>
 </head>
@@ -34,9 +34,10 @@
     <div class="answers">
       <label ng-repeat="answer in question.answers">
         <br />
-        <input id="answer" name="answer" type="radio" ng-model="answer.active" ng-click="check()"> <span class="firstAnswer"></span>
-		<input id="answer" name="answer" type="radio" ng-model="answer.active" ng-click="check()"> <span class="secondAnswer"></span>
-		<input id="answer" name="answer" type="radio" ng-model="answer.active" ng-click="check()"> <span class="thirdAnswer"></span>
+        <input id="answer" name="answer" type="radio" ng-model="answer.active" ng-click="check()"> <span class="firstAnswer"></span><br />
+		    <input id="answer" name="answer" type="radio" ng-model="answer.active" ng-click="check()"> <span class="secondAnswer"></span><br />
+		    <input id="answer" name="answer" type="radio" ng-model="answer.active" ng-click="check()"> <span class="thirdAnswer"></span><br />
+        <input id="answer" name="answer" type="radio" ng-model="answer.active" ng-click="check()"> <span class="fourthAnswer"></span>
       </label>
     </div>
     <!-- <button ng-click="respond()">Answer</button> -->

@@ -1,0 +1,21 @@
+/* Styles go here */
+
+.questionNumber,.question,.answers,.timer{
+  background-color:#ccc;
+  font-family: Verdana;
+}
+
+.questionNumber{
+  width: 120px;
+}
+
+.question, .answers{
+  width:500px;
+}
+
+.timer{
+  position:relative;
+  left:740px;
+  top:5px;
+  width: 100px;
+}
